@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="style.css">
+<title>Acusados</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-12 col-md-2" id="logo">
+                <img src="img/Logo-UTS-1.png" class="logo" alt="Logo" />
+            </div>
+            <div class="col col-12 col-md-8 my-4 text-center" >
+                <div class="row">
+                    <div class="col col-12 col-md-4 navsr">
+                        <a class="btn btn-lg estudiante" href="index.html">Casos</a>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <a class="btn btn-lg estudiante" href="acusados.html">Acusados</a>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <a class="btn btn-lg estudiante" href="pruebas.html">Pruebas</a>
+                    </div>
+                    <!-- <div class="col col-12 col-md-3">
+                        <a class="btn btn-lg estudiante" href="veredicto.html">Veredictos</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col col-12 col-md-2 text-center login">
+                <img src="img/perfil-del-usuario.png" class="perfil btn" title="usuario iconos"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- seccion de modal del formulario de registros ///////////=======================================================================0
+         y de la  tabla de registros
+    -->
+    <section>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col col-12 col-md-12">
+                    <div class="row">
+                        <div class="col col-md-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+                                Agregar Nuevo Acusado
+                            </button>
+                        </div>
+                        <div class="col col-md-6 text-center">
+                            <h3>ACUSADOS</h3>
+                        </div>
+                        <div class="col">
+                            <div class="search">
+                                <input type="search" name="searching" style="border-radius: 12px;" id="search" placeholder="Name" class="searcher">
+                                <img src="img/loupe.png" class="searchs" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Modal crear nuevos registros -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Crear Nuevo Acusado</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" id="formAcusado">
+                                        <div class="form-group">
+                                            <label for="cedula">CEDULA:</label>
+                                            <input type="text" class="form-control" placeholder="- - - - - - - -" id="cedula" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nombre">NOMBRE:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Name" id="nombre" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edad">EDAD:</label>
+                                            <input type="text" class="form-control" placeholder="Enter Age" id="edad" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sexo">GENERO:</label>
+                                            <select name="select" required id="sexo" class="sexo">
+                                                <option value=""> --seleccione-- </option>
+                                                <option value="M">MASCULINO</option>
+                                                <option value="F">FEMENINO</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="foto">FOTO:</label>
+                                            <input type="text" class="form-control" placeholder="ejemplo.png" id="foto">
+                                        </div>
+                                        <!-- <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox"> Remember me
+                                            </label>
+                                        </div> -->
+                                        <button type="submit" class="btn btn-primary ">Registrar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3 ">
+                <div class="col col-12 col-md-12">
+                    <table class="table  text-center ">
+                        <thead class="thead-dark tablaH ">
+                          <tr>
+                            <th scope="col">CÉDULA</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">EDAD</th>
+                            <th scope="col">GENERO</th>
+                            <th scope="col">Editar | Borrar | Detalles</th>
+                          </tr>
+                        </thead>
+                        <tbody id="content">
+                          <!--aqui va la lista de acusados -->
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal ACTUALIZAR  registros -->
+        <div class="modal fade" id="exampleModalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="formAcusadoU">
+                            <div class="form-group">
+                                <label for="cedulaU">CEDULA:</label>
+                                <input type="text" class="form-control" placeholder="- - - - - - - -" id="cedulaU" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombreU">NOMBRE:</label>
+                                <input type="text" class="form-control" placeholder="Enter email" id="nombreU" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edadU">EDAD:</label>
+                                <input type="text" class="form-control" placeholder="Enter Age" id="edadU" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sexoU">GENERO:</label>
+                                <select name="select" required id="sexoU" class="sexo">
+                                    <option value=""> --seleccione-- </option>
+                                    <option value="M">MASCULINO</option>
+                                    <option value="F">FEMENINO</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fotoU">FOTO:</label>
+                                <input type="text" class="form-control" placeholder="Enter NamePhoto" id="fotoU">
+                            </div>
+                            <!-- <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Remember me
+                                </label>
+                            </div> -->
+                            <input id="idU" name="id" type="hidden" value="">
+                            <button type="submit" class="btn btn-primary ">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Detalle  registros -->
+        <div class="modal fade" id="exampleModalDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detalles del Acusado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modaldetail">
+
+                        <div class="card mb-3" style="max-width: 540px; min-width: 100%; border-radius: 10px;">
+                            <div class="row no-gutters ">
+                              <div class="col-md-4">
+                                <img src="img/acusados/Hom.jpg" style="width: 150px; border-radius: 10px;" alt="...">
+                            </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Nombre: Andres Felipe</h5>
+                                  <h5 class="card-title">Cedaula: 10000000</h5>
+                                  <h5 class="card-title">Edad: 22 años</h5>
+                                  <h5 class="card-title">Genero: Masculino</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+<script src="js/acusados.js" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

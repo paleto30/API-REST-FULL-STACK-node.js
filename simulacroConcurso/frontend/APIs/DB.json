@@ -1,0 +1,18 @@
+{
+    "libros":{
+        "id":"12312",
+        "nombre":"el libro",
+        "editorial":"la editorial",
+        "año_p":"las locas"
+    },
+    "Autores":{
+        "id":"1213",
+        "nomres":"el zogo",
+        "edad":"33"
+    },
+    "editorial":{
+        "id":"1213",
+        "nomnre":"la editorial",
+        "pais":"colombia"
+    }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="style.css">
+<title>Casos</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col col-12 col-md-2" id="logo">
+                <img src="img/Logo-UTS-1.png" class="logo" alt="Logo" />
+            </div>
+            <div class="col col-12 col-md-8 my-4 text-center" >
+                <div class="row">
+                    
+                    <div class="col col-12 col-md-4 navsr">
+                        <a class="btn btn-lg estudiante" href="index.html">Casos</a>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <a class="btn btn-lg estudiante" href="acusados.html">Acusados</a>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <a class="btn btn-lg estudiante" href="pruebas.html">Pruebas</a>
+                    </div>
+                   <!-- <div class="col col-12 col-md-3">
+                        <a class="btn btn-lg estudiante" href="veredicto.html">Veredictos</a>
+                    </div>  -->
+                </div>
+            </div>
+            <div class="col col-12 col-md-2 text-center login">
+                <img src="img/perfil-del-usuario.png" class="perfil btn" title="usuario iconos"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- seccion de modal del formulario de registros ///////////=======================================================================0
+         y de la  tabla de registros
+    -->
+    <section>
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col col-12 col-md-12">
+                    
+                    <div class="row">
+                        <div class="col  col-12 col-md-3">
+                            <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+                            Agregar Nuevo Caso
+                        </button>
+                        </div>
+                        <div class="col col-12 col-md-6 text-center">
+                            <h3>TABLA DE CASOS</h3>
+                        </div>
+                        <div class="col col-12 col-md-3">
+                            <!-- <div class="search">
+                                <input type="search" name="searching" style="border-radius: 12px;" id="search" placeholder="Name" class="searcher">
+                                <img src="img/loupe.png" class="searchs" alt="" srcset="">
+                            </div> -->
+                        </div>
+                    </div>
+                                      
+                    <!-- Modal crear nuevos registros -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo caso</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" id="formCasos">
+                                        <div class="form-group">
+                                            <label for="nombre">NOMBRE DEL CASO:</label>
+                                            <input type="text" class="form-control" placeholder="Enter name" id="nombre" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="listaPersonas" class="col-form-label">PERSONA:</label>
+                                            <select class="listado" id="listaPersonas" class="sexo">
+                                              <!--  aqui van los cammpos dentro del modal -->
+                                              
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary ">Registrar caso nuevo</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3 ">
+                <div class="col col-12 col-md-12">
+                    <table class="table  text-center ">
+                        <thead class="thead-dark tablaH ">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">NOMBRE DE ACUSADO</th>
+                            <th scope="col"># TOTAL PRUEBAS</th>
+                            <th scope="col"># PRUEBAS F</th>
+                            <th scope="col"># PRUEBAS V</th>
+                            <th scope="col">Editar | Borrar | Detalles</th>
+                          </tr>
+                        </thead>
+                        <tbody id="content">
+                          <!--aqui va la lista de acusados -->
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal crear Update registros -->
+        <div class="modal fade" id="exampleModalA" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo caso</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="formCasosU">
+                            <div class="form-group">
+                                <label for="nombreU">NOMBRE DEL CASO:</label>
+                                <input type="text" class="form-control" placeholder="Enter name" id="nombreU" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="listaPersonasU class="col-form-label">PERSONA:</label>
+                                <select class="listado sexo" id="listaPersonasU">
+                                  <!--  aqui van los cammpos dentro del modal -->
+                                </select>
+                            </div>
+                            <input id="idU" name="id" type="hidden" value="">                           
+                            <button type="submit" class="btn btn-primary ">Actualizar Registro</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Detalle  registros -->
+        <div class="modal fade" id="exampleModalDetalleC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-info" id="exampleModalLabel">Detalles del Caso</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modaldetail">
+
+                        <div class="card mb-3" style="max-width: 540px; min-width: 100%; border-radius: 10px;">
+                            <div class="row no-gutters "> 
+                              <div class="col-md-12">
+                                <div class="card-body">
+                                  <h3 class="card-title">Nombre del Caso: <strong> Colmenares</strong></h3> <br>
+                                  <div class="row">
+                                    <div class="col col-md-4">
+                                        <h5 class="card-title ">Nombre del Acusado</h5>
+                                        <h6> - Andres Felipe </h6>
+                                        <img src="img/acusados/Hom.jpg" style="width: 150px; border-radius: 10px;" alt="...">
+                                        <p></p>
+                                    </div>
+                                    <div class="col col-md-6">
+                                        <h5>Description de las Pruebas:</h5>
+                                        <ul>
+                                            <li>perra</li>
+                                            <li>loca</li>
+                                            <li>asquerosasfdsfsdfsdfsfsfsddsfsdfsdfsdfsfsfsdfsdfsdfsd</li>
+                                            <li>qwe</li>
+                                            <li>qwewq</li>
+                                            <li>qweq</li>
+                                            <li>qwwe</li>
+                                            <li>qwwe</li>
+                                            <li>qwe</li>
+                                            <li>qwewq</li>
+                                            <li>qwe</li>
+                                            <li>qwewqe</li>
+                                            <li>qeq</li>
+                                        </ul>
+                                    </div>  
+                                  </div>
+                                  <div class="row">
+                                    <div class="col col-md-4">
+                                        <h5 class="card-title">Total de Pruebas: 2</h5>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <h5 class="card-title text-success">Pruebas Verdaderas: 2</h5>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <h5 class="card-title text-danger">Pruebas Falsas: 2</h5>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col col-md-6">
+                                        <h2>VEREDICTO:</h2>
+                                    </div>
+                                    <div class="col col-md-6">
+                                        <h2>culpable</h2>
+                                    </div>
+                                  </div             
+                                </div>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<script src="js/casos.js" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
