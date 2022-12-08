@@ -4,14 +4,13 @@ Creado por: Andres Felipe Galvis Pereira
 
 # API_REST_FULL_STACK
 
-##=================================================================================
-    INTRODUCCION
+## INTRODUCCION
     
 Este proyecto se desarrollo en node.js para el backend
 y se consumieron los servicios de la api-rest con javascript
 se uso un poco de bootstrap para el diseño y algunos styles.css propios
 
-#=============================================================================
+#===================================================================
   
  --> EXPLICACION DEL FUNCIONAMIENTO <-- 
 
@@ -28,7 +27,7 @@ en cada una de ellas , existen las opcionde CRUD , crear , leer ,actualizar y bo
 aparte hay dentro de cada tabla una accion de mmostrar detalles, en la cual se muestran unos detalles extra de los resgistros de las tablas.
 
 
-##==================================================================================================
+##==================================================================
   
   ------>  TENER EN CUENTA LO SIGUIENTE, ES IMPORTANTE PARA QUE FUNCIONE EL PROYECTO EN SUS ENTORNOS <------------------
   
@@ -41,7 +40,6 @@ para que puedan correr el proyecto tiene que modificar el archivo .env:
       y enotnces en el archo .env deberan cambiar el nombre de la base de datos , por el nombre que uds hayan creado 
       es decir: (DATABASE = "SU data base").
       
-###=======================================================================================================
-
+###==============================================================
 
     
